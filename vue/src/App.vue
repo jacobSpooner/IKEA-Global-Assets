@@ -1,17 +1,20 @@
 <template>
   <div id="app">
-    <Products/>
+    <Header/>
+    <router-view/>
   </div>
 </template>
 
 <script>
 import { mapActions } from 'vuex'
-import Products from './components/Products.vue'
+// import Products from './components/products/Products.vue'
+import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    Products
+    // Products,
+    Header
   },
   // Define mapActions to dispatch Store Actions in methods
   methods: {
