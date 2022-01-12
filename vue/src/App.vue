@@ -1,28 +1,25 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Products/>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import { mapActions } from 'vuex'
+import Products from './components/Products.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    Products
+  },
+  // Define mapActions to dispatch Store Actions in methods
+  methods: {
+    ...mapActions(["setProductsAction"])
+    },
+  // Hook the actions when vue/app lifecycle is created to call them
+  created() {
+    this.setProductsAction()
   }
 }
 </script>
-
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>
