@@ -31,18 +31,18 @@ export default new Vuex.Store({
             context.commit("setProducts", (await Axios.get(productsURL)).data);
         },
         //Create an action – addProduct passing context and page. Post the products to Mongodb. Display the new Products UI by committing to setProducts.
-        async addProduct(context, page) {
-            await Axios.post(productsURL, page);
+        async addProduct(context, product) {
+            await Axios.post(productsURL, product);
             context.commit("setProducts", (await Axios.get(productsURL)).data);
         },
 
-        async editProduct(context, page) {
-            await Axios.put(`${productsURL}/${page._id}`, page);
+        async editProduct(context, product) {
+            await Axios.put(`${productsURL}/${product._id}`, product);
             context.commit("setProducts", (await Axios.get(productsURL)).data);
         },
 
-        async deleteProduct(context, page) {
-            await Axios.delete(`${productsURL}/${page._id}`, page);
+        async deleteProduct(context, product) {
+            await Axios.delete(`${productsURL}/${product._id}`, product);
             context.commit("setProducts", (await Axios.get(productsURL)).data);
         }
     }

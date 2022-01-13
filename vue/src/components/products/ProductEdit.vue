@@ -6,7 +6,7 @@
             <div class="form-group"><label>Name </label> <input type="text" class="form-control" v-model="product.name"></div>
             <div class="form-group"><label>Price </label> <input type="text" class="form-control" v-model="product.price"></div>
             <div class="form-group"><label>Quantity </label> <input type="text" class="form-control" v-model="product.quantity"></div>
-            <div class="form-group"><label>Image </label> <input type="text" class="form-control" v-model="product.image"></div>
+            <div class="form-group"><label>Image </label> <input type="text" class="form-control" v-model="product.image" placeholder="Use image link from internet"></div>
             <div>
               <button class="btn btn-secondary" to="/products">Back</button>
               <button class="btn btn-primary" @click="handleProduct">{{ editMode ? "Edit" : "Add"}}</button>

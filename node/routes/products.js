@@ -47,28 +47,22 @@ router.put("/:id", (req, res) => {
     const quantity = req.fields.quantity;
     const image = req.fields.image;
 
-    const product = new Product({
-        productcode: productcode,
-        name: name,
-        price: price,
-        quantity: quantity,
-        image: image  
-    });
-
-    console.log(product);
-
-    Product.findById(id, (error, product) => {
+    Product.findById(id, (error, tempproduct) => {
         if(error) console.log("Error in Products " + error);
-            this.productcode = productcode;
-            this.name = name;
-            this.price = price;
-            this.quantity = quantity;
-            this.image = image; 
-        
-            product.save((error) => {
+        tempproduct.productcode = productcode;
+        tempproduct.name = name;
+        tempproduct.price = price;
+        tempproduct.quantity = quantity;
+        tempproduct.image = image; 
+
+            console.log(tempproduct);
+
+            tempproduct.save((error) => {
                 if(error) console.log("Error in Products " + error);
                 res.status(201).end(); 
+                console.log("Put updated data in db")
             });
+        
     });
 
     

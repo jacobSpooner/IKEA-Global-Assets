@@ -4,6 +4,7 @@ import Vue from "vue";
 
 import VueRouter from "vue-router";
 
+import List from "../components/List"
 import Products from "../components/products/Products";
 import ProductEdit from "../components/products/ProductEdit"
 
@@ -18,10 +19,11 @@ export default new VueRouter({
         {   path: "/products", 
             component: Products,
             children: [
-                // { path: "page/:op(add|edit)/:id?", component: ProductEdit }
-                { path: "page/add", component: ProductEdit }
+                { path: ":op(add|edit)/:id?", component: ProductEdit }
+                // { path: "add", component: ProductEdit }
             ] 
-        }
+        },
+        {path: "/", component: List}
     ]
 });
 
