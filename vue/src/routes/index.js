@@ -5,7 +5,6 @@ import Vue from "vue";
 import VueRouter from "vue-router";
 
 import Products from "../components/products/Products";
-// import AdminPages from "../components/admin/Pages"
 import ProductEdit from "../components/products/ProductEdit"
 
 // Load the router to the app.
@@ -19,8 +18,8 @@ export default new VueRouter({
         {   path: "/products", 
             component: Products,
             children: [
-                // { path: "pages", component: AdminPages },
-                { path: "products/:op(add|edit)/:id?", component: ProductEdit }
+                // { path: "page/:op(add|edit)/:id?", component: ProductEdit }
+                { path: "page/add", component: ProductEdit }
             ] 
         }
     ]

@@ -7,13 +7,11 @@
 
 <script>
 import { mapActions } from 'vuex'
-// import Products from './components/products/Products.vue'
 import Header from './components/Header.vue'
 
 export default {
   name: 'App',
   components: {
-    // Products,
     Header
   },
   // Define mapActions to dispatch Store Actions in methods
