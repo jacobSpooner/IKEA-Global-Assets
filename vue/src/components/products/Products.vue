@@ -13,11 +13,11 @@
         </thead>
         <tbody>
             <tr v-for="(product, i) in products" :key="i">
-                <th scope="row">{{product.productcode}}</th>
+                <td scope="row">{{product.productcode}}</td>
                 <td class="align-middle">{{product.name}}</td>
                 <td class="align-middle">{{product.price}}</td>
                 <td class="align-middle">{{product.quantity}}</td>
-                <td class="align-middle">{{product.image}}</td>
+                <td class="align-middle image">{{product.image}}</td>
                 <td class="align-middle">   
                     <button class="btn btn-sm btn-secondary mx-2" @click="handleEdit(product)">Edit</button>
                     <button class="btn btn-sm btn-danger mx-2" @click="deleteProduct(product)">Delete</button>
@@ -44,3 +44,19 @@ export default {
   }
 }
 </script>
+
+<style>
+td.image {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  width: 100px;
+  display: inline-block;
+}
+
+table {
+  border-collapse: collapse;
+  table-layout: auto;
+  width: 100%;
+}
+</style>
